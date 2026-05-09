@@ -2,7 +2,6 @@ import numpy as np
 import soundfile as sf
 from scipy.signal import butter, lfilter
 
-
 def stereo_upmix(audio, sr, delay_ms=12, gain_l=1.0, gain_r=0.98):
     """
     Convert mono audio into wide stereo using Haas effect + subtle EQ difference.
