@@ -7,13 +7,13 @@ import soundfile as sf
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
 model = MusicgenForConditionalGeneration.from_pretrained(
-    "facebook/musicgen-small",
-    dtype=torch.float16
+    "facebook/musicgen-stereo-medium",
+    torch_dtype=torch.float16
 ).to(device)
 
 processor = AutoProcessor.from_pretrained("facebook/musicgen-small")
 
-prompt = "lofi hip hop beat with warm bass and chill drums"
+prompt = "massive bass hit intro, rising synth sweep, sudden drop into fast chaotic beat, distorted percussion, glitchy transitions, dramatic and over-the-top"
 
 inputs = processor(
     text=[prompt],
@@ -32,7 +32,7 @@ audio = audio_values[0].cpu().float().numpy().T
 
 os.makedirs("outputs", exist_ok=True)
 
-sf.write("outputs/output.wav", audio, 32000)
+sf.write("outputs/wtfoutput.wav", audio, 32000)
 print("Saved output.wav")
 
 #
