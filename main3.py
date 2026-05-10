@@ -59,7 +59,7 @@ audio = audio_values[0].cpu().float().numpy().T  # shape: (samples, channels)
 # Save output
 # -----------------------------
 os.makedirs("outputs", exist_ok=True)
-output_path = "outputs/wtfoutput9.wav"
+output_path = "outputs/wtfoutput11.wav"
 
 sf.write(output_path, audio, 32000)
 print(f"Saved {output_path}")
