@@ -11,9 +11,9 @@ model = MusicgenForConditionalGeneration.from_pretrained(
     torch_dtype=torch.float16
 ).to(device)
 
-processor = AutoProcessor.from_pretrained("facebook/musicgen-small")
+processor = AutoProcessor.from_pretrained("facebook/musicgen-stereo-medium")
 
-prompt = "massive bass hit intro, rising synth sweep, sudden drop into fast chaotic beat, distorted percussion, glitchy transitions, dramatic and over-the-top"
+prompt = "Chaotic trap beat, glitchy risers, comedic bass hits, fast pacing, 8 seconds."
 
 inputs = processor(
     text=[prompt],
@@ -32,7 +32,7 @@ audio = audio_values[0].cpu().float().numpy().T
 
 os.makedirs("outputs", exist_ok=True)
 
-sf.write("outputs/wtfoutput.wav", audio, 32000)
+sf.write("outputs/wtfoutput3.wav", audio, 32000)
 print("Saved output.wav")
 
 #
