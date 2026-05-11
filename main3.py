@@ -23,7 +23,7 @@ processor = AutoProcessor.from_pretrained("facebook/musicgen-stereo-medium")
 # Prompt for your viral WTF audio
 # -----------------------------
 prompt = (
-    "lofi electronic hybrid, crisp drums, dreamy synths, subtle vinyl texture, 90 bpm, aesthetic and calming"
+    "lofi electronic hybrid, crisp drums, dreamy synths, subtle vinyl texture, 90 bpm, energetic"
 )
 
 # -----------------------------
@@ -59,7 +59,7 @@ audio = audio_values[0].cpu().float().numpy().T  # shape: (samples, channels)
 # Save output
 # -----------------------------
 os.makedirs("outputs", exist_ok=True)
-output_path = "outputs/wtfoutput11.wav"
+output_path = "outputs/wtfoutput12.wav"
 
 sf.write(output_path, audio, 32000)
 print(f"Saved {output_path}")
